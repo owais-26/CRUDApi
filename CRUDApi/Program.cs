@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<FullStackDbContext>(options => 
-    options.UseSqlServer(builder.Configuration.GetConnectionString("FullStackConnectionString")))
+builder.Services.AddDbContext<FullStackDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("FullStackConnectionString")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +22,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(policy => policy.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
 
 app.UseAuthorization();
 
