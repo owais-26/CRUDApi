@@ -93,8 +93,9 @@ namespace CRUDApi.Controllers
             employee.Salary = updateEmployeeRequest.Salary;
             employee.Department = updateEmployeeRequest.Department;
             employee.LastModifiedOn = DateTime.UtcNow; // Update last modified date/time
+            employee.LastModifiedBy = updateEmployeeRequest.LastModifiedBy;
 
-            await _fullStackDbContext.SaveChangesAsync();
+           await _fullStackDbContext.SaveChangesAsync();
 
             return Ok(employee);
 
