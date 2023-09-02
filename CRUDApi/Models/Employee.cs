@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.ComponentModel.DataAnnotations;
 namespace CRUDApi.Models
 {
     public class Employee
@@ -17,4 +17,5 @@ namespace CRUDApi.Models
         public string CreatedBy { get; set; }
         public string LastModifiedBy { get; set; }
     }
+    
 }

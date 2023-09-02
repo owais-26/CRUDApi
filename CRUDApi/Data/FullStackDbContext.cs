@@ -9,5 +9,6 @@ namespace CRUDApi.Data
         {
         }
         public DbSet<Employee> Employees { get; set; }
+       
     }
 }
